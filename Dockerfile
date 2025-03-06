@@ -1,14 +1,14 @@
-# Используем OpenJDK 23 как базовый образ
+# Используем базовый образ с OpenJDK
 FROM openjdk:23-jdk-slim
 
-# Устанавливаем рабочую директорию в контейнере
+# Устанавливаем рабочую директорию внутри контейнера
 WORKDIR /app
 
-# Копируем .jar файл из target в контейнер
-COPY target/demo-0.0.1-SNAPSHOT.jar /app/my-java-app.jar
+# Копируем JAR файл в контейнер
+COPY ./target/demo-0.0.1-SNAPSHOT.jar /app/my-java-app.jar
 
-# Открываем порты
+# Открываем порт для приложения
 EXPOSE 8080
 
 # Команда для запуска приложения
-CMD ["java", "-jar", "/app/my-java-app.jar"]
+CMD ["java", "-jar", "my-java-app.jar"]
