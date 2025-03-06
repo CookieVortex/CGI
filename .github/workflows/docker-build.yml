@@ -1,0 +1,33 @@
+name: Docker Build and Push
+
+on:
+  push:
+    branches:
+      - main  # Запускается на каждый пуш в основную ветку
+  pull_request:
+    branches:
+      - main  # Запускается на каждый pull request в основную ветку
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Операционная система, на которой будет запускаться действие
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2  # Клонируем репозиторий в рабочую директорию
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2  # Устанавливаем Buildx для мультиархитектурной сборки Docker
+
+      - name: Cache Docker layers
+        uses: actions/cache@v2  # Кэшируем слои Docker для ускорения сборки
+        with:
+          path: /tmp/.buildx-cache
+          key: ${{ runner.os }}-buildx-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-buildx-
+
+      - name: Build and push Docker image
+        run: |
+          docker-compose -f docker-compose.yml build  # Собираем Docker образ с помощью Docker Compose
+          docker-compose -f docker-compose.yml push   # (если нужно) пушим образ в Docker Hub или в другую регистрию
