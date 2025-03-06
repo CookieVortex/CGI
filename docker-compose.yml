@@ -24,6 +24,6 @@ services:
     ports:
       - "9092:9092"  # Открытие порта для TCP-соединений, если нужно
     environment:
-      - H2_OPTIONS=-tcp -tcpAllowOthers -tcpPort 9092 -databaseToCreate /data/testdb
+      - H2_OPTIONS=-tcp -tcpAllowOthers -tcpPort 9092
     volumes:
       - ./data:/data
