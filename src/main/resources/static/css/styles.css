@@ -1,0 +1,193 @@
+#back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #031d4e;
+    color: white;
+    font-size: 13px;
+    border: 1px solid #999fac;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Recommendation section styles */
+.recommendations {
+    background-color: #031d4e;
+    color: white;
+    padding: 15px 20px;
+    font-size: 1.0rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Seat recommendation styles */
+.seat-recommendations {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    text-align: center;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.recommendations p {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    white-space: nowrap;
+}
+
+/* Pay button (disabled) styles */
+#pay-button {
+    background-color: #ccc;
+    color: #666;
+    border: none;
+    padding: 8px 55px;
+    font-size: 1rem;
+    cursor: not-allowed;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+
+/* Background image size */
+.background-image {
+    width: 15%;
+    height: 15%;
+}
+
+/* Seating container styles (positioning and layout) */
+.seating-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    position: absolute;
+    top: 72%; /* Position in the center of the image */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Shift back by half the width/height */
+    z-index: 10; /* Ensure it's above the image */
+}
+
+/* First-class seat styles */
+.first-class {
+    background-color: gold;
+}
+
+/* Business-class seat styles */
+.business-class {
+    background-color: lightblue;
+}
+
+/* Economy-class seat styles */
+.economy-class {
+    background-color: lightgray;
+}
+
+/* Side seating section layout */
+.side {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+/* Row layout for seats */
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 1px;
+    margin: 0;
+}
+
+/* Individual seat styles */
+.seat {
+    width: 40px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Aisle between seats */
+.aisle {
+    width: 50px;
+}
+
+/* Style for occupied seats (crossed out) */
+.occupied {
+    text-decoration: line-through;
+}
+
+/* Spacing for first row */
+.row-gap-first {
+    margin-bottom: 11px;
+}
+
+/* Spacing for subsequent rows */
+.row-gap-later {
+    margin-bottom: 0;
+}
+
+/* Footer section styles */
+footer {
+    background-color: #031d4e;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .seating-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .side {
+        width: 250px;
+    }
+
+    .aisle {
+        width: 30px;
+    }
+
+    .seat {
+        width: 25px;
+        height: 25px;
+    }
+}

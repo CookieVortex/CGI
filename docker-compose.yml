@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data:/app/data  # Монтируем локальную директорию для хранения данных базы
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:h2:file:/app/data/testdb  # Путь к базе данных внутри контейнера
+      - SPRING_DATASOURCE_DRIVER_CLASSNAME=org.h2.Driver
+      - SPRING_DATASOURCE_USERNAME=sa
+      - SPRING_DATASOURCE_PASSWORD=
+      - SPRING_H2_CONSOLE_ENABLED=true
+      - SPRING_H2_CONSOLE_PATH=/h2-console
+    depends_on:
+      - db
+
+  # База данных H2
+  db:
+    image: oscarfonts/h2:latest
+    container_name: h2-database
+    ports:
+      - "9092:9092"  # Открытие порта для TCP-соединений, если нужно
+    environment:
+      - H2_OPTIONS=-tcp -tcpAllowOthers -tcpPort 9092 -databaseToCreate /data/testdb
+    volumes:
+      - ./data:/data

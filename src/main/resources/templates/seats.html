@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Select your preferred seat on the Boeing plane. Comfortable seating options available for business, first class, and economy.">
+    <meta name="keywords" content="seat plan, seating chart, flight, airplane, business class, first class, economy class, pay for seat">
+    <title>Seat Plan</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<a href="/" id="back-button">Back to Home</a>
+
+<main>
+    <!-- Recommendations Section -->
+    <section class="recommendations">
+        <p>Choose a comfortable seat: window or aisle for more comfort!</p>
+        <div class="seat-recommendations">
+            <p><strong>1A - 2G:</strong> Business Class</p>
+            <p><strong>4A - 6G:</strong> First Class</p>
+            <p><strong>7A - 25G:</strong> Economy Class</p>
+            <p><strong>12A - 12G:</strong> Large legroom</p>
+            <p><strong>9A - 12G:</strong> Seat near the exit</p>
+            <button id="pay-button" disabled>Pay</button>
+        </div>
+    </section>
+
+    <!-- Image of the plane -->
+    <img src="/images/Boeing.png" alt="Boeing Plane" class="background-image">
+
+    <!-- Seating Plan -->
+    <div class="seating-container">
+        <div class="side" id="left-side"></div>
+        <div class="aisle"></div>
+        <div class="side" id="right-side"></div>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2025 Flight Logistics. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="/">Terms & Conditions</a> |
+            <a href="/">Privacy Policy</a> |
+            <a href="/">Contact Us</a>
+        </div>
+    </div>
+</footer>
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>

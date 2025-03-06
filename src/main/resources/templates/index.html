@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Planner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/index_styles.css}">
+</head>
+
+<body>
+<!-- Menu -->
+<nav class="navbar">
+    <div class="logo">
+        <h3>Flight Logistics</h3>
+    </div>
+    <div class="menu">
+        <a href="/" aria-label="Go to profile page">Profile</a>
+        <a href="/" aria-label="Go to support page">Support</a>
+        <a href="/" aria-label="Currency EUR">EUR</a>
+    </div>
+</nav>
+
+<!-- Header and Form -->
+<div class="header">
+    <h1>Your journey starts here</h1>
+    <form action="/flights/filter" method="get" class="form-inline">
+        <input type="text" id="from" name="from" placeholder="From" aria-label="Departure location">
+        <input type="text" id="to" name="to" placeholder="To" aria-label="Arrival location">
+        <input type="date" id="departureDate" name="departureDate" aria-label="Departure date">
+        <input type="number" id="minPrice" name="minPrice" placeholder="Min €" aria-label="Minimum price">
+        <input type="number" id="maxPrice" name="maxPrice" placeholder="Max €" aria-label="Maximum price">
+        <button type="submit" aria-label="Search flights">Search</button>
+    </form>
+</div>
+
+<!-- Table of Available Flights -->
+<h2>Last-minute deals</h2>
+<table>
+    <thead>
+    <tr>
+        <th>№</th>
+        <th>Departure</th>
+        <th>Arrival</th>
+        <th>Departure Date</th>
+        <th>Departure Time</th>
+        <th>Price</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="flight, iterStat : ${flights}" th:class="${iterStat.index % 2 == 0} ? 'even' : 'odd'">
+        <td th:text="${flight.id}"></td>
+        <td th:text="${flight.departureLocation}"></td>
+        <td th:text="${flight.arrivalLocation}"></td>
+        <td th:text="${flight.formattedDepartureDate}"></td>
+        <td th:text="${flight.formattedDepartureTime}"></td>
+        <td th:text="${flight.price}"></td>
+        <td>
+            <a th:href="@{/seats(flightId=${flight.id})}" class="btn-seat-selection" aria-label="Book seat for flight ${flight.id}">Book</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2025 Flight Logistics. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="/" aria-label="Read terms and conditions">Terms & Conditions</a> |
+            <a href="/" aria-label="Read privacy policy">Privacy Policy</a> |
+            <a href="/" aria-label="Contact us">Contact Us</a>
+        </div>
+    </div>
+</footer>
+
+</html>

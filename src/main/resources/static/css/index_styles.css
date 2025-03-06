@@ -1,0 +1,261 @@
+/* General Styles */
+* {
+    font-family: 'Roboto', sans-serif !important;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Menu */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #031d4e;
+    padding: 10px 20px;
+}
+
+.navbar .logo img {
+    max-width: 100px;
+}
+
+.navbar .menu {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Header and Form */
+.header {
+    background-image: url('../images/img_2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0;
+    height: auto;
+    background-color: #f4f4f4;
+    padding: 60px;
+    border-radius: 20px;
+}
+
+/* Form Input Elements */
+form input, form button {
+    height: 60px;
+    padding: 10px;
+    font-size: 13px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    flex-grow: 1;
+    min-width: 200px;
+}
+
+/* Search Button */
+button {
+    all: unset;
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 13px !important;
+    padding: 12px;
+    background-color: #031d4e;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+}
+
+button:hover {
+    background-color: #08327e;
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+    width: 100%;
+}
+
+/* Fixed Size Buttons */
+.large-btn, .best-offers-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    text-align: center;
+    width: 200px;
+    margin-top: 10px;
+    background-color: #031d4e;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.large-btn svg, .best-offers-btn svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.checkbox-label input {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 16px !important;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+td {
+    border: 1px solid #ddd;
+}
+
+table tr:hover {
+    background-color: rgb(243, 246, 236);
+}
+
+.even {
+    background-color: #f4f4f4;
+}
+
+.odd {
+    background-color: #ffffff;
+}
+
+/* Seat Selection Button */
+.btn-seat-selection:hover {
+    text-decoration: underline;
+    color: #0a84e4;
+}
+
+/* Headings */
+h1, h2 {
+    text-align: center;
+    color: #434541;
+}
+
+h3 {
+    color: #dddddd;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Footer */
+footer {
+    background-color: #031d4e;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+    form {
+        gap: 15px;
+    }
+
+    form div {
+        min-width: 160px;
+    }
+
+    button {
+        min-width: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    form {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    form div {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    input, button {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
