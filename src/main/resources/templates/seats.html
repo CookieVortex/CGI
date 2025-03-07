@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Select your preferred seat on the Boeing plane. Comfortable seating options available for business, first class, and economy.">
-    <meta name="keywords" content="seat plan, seating chart, flight, airplane, business class, first class, economy class, pay for seat">
+    <meta name="description"
+          content="Select your preferred seat on the Boeing plane. Comfortable seating options available for business, first class, and economy.">
+    <meta name="keywords"
+          content="seat plan, seating chart, flight, airplane, business class, first class, economy class, pay for seat">
     <title>Seat Plan</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
@@ -18,12 +20,30 @@
         <p>Choose a comfortable seat: window or aisle for more comfort!</p>
         <div class="seat-recommendations">
             <p><strong>1A - 2G:</strong> Business Class</p>
-            <p><strong>4A - 6G:</strong> First Class</p>
+            <p><strong>4A - 4G:</strong> First Class</p>
             <p><strong>7A - 25G:</strong> Economy Class</p>
-            <p><strong>12A - 12G:</strong> Large legroom</p>
-            <p><strong>9A - 12G:</strong> Seat near the exit</p>
+            <p><strong>13A - 13G:</strong> Large legroom</p>
+            <p><strong>9A - 14G:</strong> Seat near the exit</p>
             <button id="pay-button" disabled>Pay</button>
         </div>
+        <!-- Seating Filters -->
+        <div class="seat-filters">
+            <input type="checkbox" class="filter" id="business-class" data-class="business-class">
+            <label for="business-class">Business Class</label>
+
+            <input type="checkbox" class="filter" id="first-class" data-class="first-class">
+            <label for="first-class">First Class</label>
+
+            <input type="checkbox" class="filter" id="economy-class" data-class="economy-class">
+            <label for="economy-class">Economy Class</label>
+
+            <input type="checkbox" class="filter" id="large-legroom" data-row="13">
+            <label for="large-legroom">Large legroom</label>
+
+            <input type="checkbox" class="filter" id="exit-seat" data-range="9-14">
+            <label for="exit-seat">Seat near the exit</label>
+        </div>
+
     </section>
 
     <!-- Image of the plane -->
