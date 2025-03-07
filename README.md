@@ -1,8 +1,6 @@
 ﻿# Flight Logistics
 
-**Flight Logistics** is a web application for flight planning and seat selection on airplanes. The application allows
-users to search for available flights with filters for various parameters and select comfortable seats on board with the
-option for payment. All data interacts with the server, which processes requests and returns the necessary information.
+**Flight Logistics** is a web application for flight planning and seat selection on airplanes. All data interacts with the server, which processes requests and returns the necessary information.
 
 ## Completed Tasks
 
